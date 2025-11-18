@@ -99,9 +99,13 @@
                                 </button>
                             </form>
 
-                             @if ($customer->invoices->isNotEmpty())
+                             @php
+                                $lastInvoice = $customer->invoices()->latest()->first();
+                            @endphp
+
+                            @if ($lastInvoice)
                                 {{-- Lihat Invoice --}}
-                                <a href="{{ route('invoice.show', $customer->invoices->last()->id) }}"
+                                <a href="{{ route('invoice.show', $lastInvoice->id) }}"
                                 class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center ms-1"
                                 title="Lihat Invoice">
                                     <iconify-icon icon="mdi:paper-outline"></iconify-icon>

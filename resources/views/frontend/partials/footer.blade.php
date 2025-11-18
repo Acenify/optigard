@@ -24,10 +24,10 @@
                         <ul class="contact-widget-1-list">
                             <li>
                                 <div class="contact-widget-1-text">
-                                    <a href="tel:6282121113688">Call us on : +6282121113688</a>
+                                    <a href="tel:6282121212589">Call us on : +6282121212589</a>
                                 </div>
                                 <div class="contact-widget-1-text">
-                                    <a href="mailto:acegardindonesia@gmail.com">Email us : acegardindonesia@gmail.com</a>
+                                    <a href="mailto:optigardofficial@gmail.com">Email us : optigardofficial@gmail.com</a>
                                 </div>
                             </li>
                         </ul>

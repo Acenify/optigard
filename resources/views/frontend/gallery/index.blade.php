@@ -11,7 +11,7 @@
     }
 </style>
 
-<section id="ubah" class="page-title-sectition" style="background-image:url({{ asset('assets/frontend/assets/banner-bg.jpg') }}); background-size: cover; background-position: bottom center;">
+<section id="ubah" class="page-title-sectition" style="background-image:url('{{ asset('assets/frontend/assets/banner-bg.png') }}'); background-size: cover; background-position: bottom center;">
     <div class="auto-container">
         <h2 class="page-title">Gallery</h2>
         <ul class="page-breadcrumb">

@@ -13,7 +13,7 @@
     }
 </style>
 
-<section id="ubah" class="page-title-sectition" style="background-image:url('{{ asset('assets/frontend/assets/banner-bg.jpg') }}'); background-size: cover; background-position: bottom center;">
+<section id="ubah" class="page-title-sectition" style="background-image:url('{{ asset('assets/frontend/assets/banner-bg.png') }}'); background-size: cover; background-position: bottom center;">
     <div class="auto-container">
         <h2 class="page-title">Specification</h2>
         <ul class="page-breadcrumb">
@@ -77,7 +77,7 @@
 </section>
 
 <section class="video-1-section s-two">
-    <div class="video-1-bg" data-parallax='{"y": 50}' style="background-image:url('{{ asset('assets/frontend/assets/15.jpg') }}')"></div>
+    <div class="video-1-bg" data-parallax='{"y": 50}' style="background-image:url('{{ asset('assets/frontend/assets/spesification-banner-bg.png') }}')"></div>
     <div class="auto-container">
         <div class="row align-items-center">
             <div class="col-lg-8 offset-lg-4">

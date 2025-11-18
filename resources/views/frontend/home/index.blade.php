@@ -37,7 +37,7 @@
                 <div class="contactinfo-1-icon"><i class="flaticon-telephone"></i></div>
                 <div class="contactinfo-1-info-label">WHATSAPP</div>
                 <div class="contactinfo-1-info-text">
-                    <a href="https://wa.me/+6282121113688" target="_blank">+6282121113688</a>
+                    <a href="https://wa.me/+6282121212589" target="_blank">+6282121212589</a>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                 <div class="contactinfo-1-icon"><i class="flaticon-email"></i></div>
                 <div class="contactinfo-1-info-label">email address</div>
                 <div class="contactinfo-1-info-text">
-                    <a href="mailto:acegardindonesia@gmail.com">acegardindonesia@gmail.com</a>
+                    <a href="mailto:optigardofficial@gmail.com">optigardofficial@gmail.com</a>
                 </div>
             </div>
         </div>

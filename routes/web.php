@@ -36,7 +36,6 @@ Route::middleware('auth')->group( function () {
     Route::put('/invoice/{invoice}', [InvoiceController::class, 'update'])->name('invoice.update');
     Route::get('/invoice/{invoice}/download', [InvoiceController::class, 'download'])->name('invoice.download');
     Route::delete('/invoice/{invoice}', [InvoiceController::class, 'destroy'])->name('invoice.destroy');
-
 });
 
 Route::get('/pdf-test', function () {

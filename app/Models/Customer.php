@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Invoice;
 use App\Models\CustomerProduct;
 use App\Models\CategoryProduct;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Customer extends Model
 {
@@ -35,5 +36,10 @@ class Customer extends Model
     public function customerProducts()
     {
         return $this->hasMany(CustomerProduct::class);
+    }
+
+    public function invoices(): HasOne
+    {
+        return $this->hasOne(Invoice::class);
     }
 }

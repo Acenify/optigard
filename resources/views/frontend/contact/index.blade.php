@@ -11,7 +11,7 @@
     }
 </style>
 
-<section id="ubah" class="page-title-sectition" style="background-image:url('{{ asset('assets/frontend/assets/banner-bg.jpg') }}'); background-size: cover; background-position: bottom center;">
+<section id="ubah" class="page-title-sectition" style="background-image:url('{{ asset('assets/frontend/assets/banner-bg.png') }}'); background-size: cover; background-position: bottom center;">
     <div class="auto-container">
         <h2 class="page-title">Contact Us</h2>
         <ul class="page-breadcrumb">
@@ -54,7 +54,7 @@
                     const name = document.getElementById('fullname').value || '';
                     const msg  = document.getElementById('message').value || '';
                     const text = encodeURIComponent(name + '\n' + msg);
-                    window.open('https://wa.me/6282121113688?text=' + text, '_blank');
+                    window.open('https://wa.me/6282121212589?text=' + text, '_blank');
                 }
             </script>
 
@@ -64,9 +64,10 @@
                     <h4 class="contactus-1-info-title">We Are Here To Help</h4>
                     <div class="contactus-1-info-text">Office Hour : Monday - Sunday ( 09.00 - 21.00 WIB )</div>
                     <ul class="contactus-1-info-list">
-                        <li><i class="fal fa-map-marker-alt"></i><span>Address:</span> Jl. Tanjung Barat No.2B, Lenteng Agung, Jagakarsa, Jakarta Selatan 12530</li>
-                        <li><i class="fal fa-envelope"></i><span>email:</span> acegardindonesia@gmail.com</li>
-                        <li><i class="fal fa-phone"></i><span>phone:</span> +6282121113688</li>
+                        <li><i class="fal fa-map-marker-alt"></i><span>Address:</span> Jl. KH. Hasyim Ashari, RT.007/RW.002, <br>
+                        Nerogtog, Kec. Cipondoh, Kota Tangerang, Banten 15146</li>
+                        <li><i class="fal fa-envelope"></i><span>email:</span> optigardofficial@gmail.com</li>
+                        <li><i class="fal fa-phone"></i><span>phone:</span> +6282121212589</li>
                     </ul>
                 </div>
             </div>
