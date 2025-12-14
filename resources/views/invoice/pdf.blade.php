@@ -171,7 +171,7 @@
     <table style="width: 100%;">
         <tr>
             <th style="text-align: left;">
-                <img style="width: 15rem;" src="{{ public_path('assets/frontend/assets/dark-logo-optigard.png') }}" alt="Logo Light">
+                <img style="width: 15rem;" src="{{ asset('assets/frontend/assets/dark-logo-optigard.png') }}" alt="Logo Light">
                 <p style="font-weight: bold;">
                     Jl. KH. Hasyim Ashari, RT.007/RW.002,<br> Nerogtog, Kec. Cipondoh, Kota Tangerang, Banten 15146
                 </p>
@@ -299,7 +299,7 @@
                 </div>
                 <div class="avoid-break" style="text-align: center; margin-top: 1rem;">
                     <p style="margin: 0;">SINCERELY,</p>
-                    <img src="{{ public_path('assets/frontend/assets/dark-logo-optigard.png') }}" style="width: 15rem; transform: rotate(-5deg); margin: 1rem auto;" alt="cap Acegard">
+                    <img src="{{ asset('assets/frontend/assets/dark-logo-optigard.png') }}" style="width: 15rem; transform: rotate(-5deg); margin: 1rem auto;" alt="cap Acegard">
                     <p style="margin: 0;">ACEGARD INDONESIA</p>
                 </div>
             </td>

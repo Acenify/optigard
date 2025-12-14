@@ -68,7 +68,7 @@
                     <tr>
                         <td>
                             {{ $item->product->name ?? '-' }}
-                            <input type="hidden" name="products[{{ $loop->index }}][customer_building_product_id]" value="{{ $item->id }}">
+                            <input type="hidden" name="products[{{ $loop->index }}][customer_product_id]" value="{{ $item->id }}">
                         </td>
                         <td>{{ $item->category->name ?? '-' }}</td>
                         <td>{{ $item->meters }}</td>

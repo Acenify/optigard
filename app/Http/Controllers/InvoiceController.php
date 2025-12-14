@@ -124,13 +124,14 @@ class InvoiceController extends Controller
         $request->validate([
             'invoice_number' => 'required',
             'invoice_date'   => 'required|date',
-            'type'           => 'required|in:cash,credit',
+            'type'           => 'required|in:cash,credit,transfer',
             'discount'       => 'nullable|numeric',
             'down_payment'   => 'nullable|numeric', // input form
             'status'         => 'required|in:unpaid,partial,paid',
             'products'       => 'required|array',
             // ✅ plural
-            'products.*.customer__product_id' => 'required|exists:customer__products,id',
+            'products'       => 'required|array',
+            'products.*.customer_product_id' => 'required|exists:customer_product,id',
             'products.*.price' => 'required|numeric',
         ]);
 
@@ -151,12 +152,16 @@ class InvoiceController extends Controller
             // Sync ulang produk dengan harga
             $syncData = [];
             foreach ($request->products as $prod) {
-                $syncData[$prod['customer__product_id']] = ['price' => (int) $prod['price']];
+                $syncData[$prod['customer_product_id']] = [
+                    'price' => (int) $prod['price'],
+                ];
             }
-            $invoice->products()->sync($syncData);
+
+            $invoice->products()->sync($syncData); // atau relasi yang sesuai (misalnya customerProducts())
+
 
             // (opsional) hitung ulang total/remaining jika ingin konsisten setelah update:
-            $totalPrice = $invoice->products()->sum('customer__product_invoice.price');
+            $totalPrice = $invoice->products()->sum('invoice_product.price');
             $discount   = (int) ($invoice->discount ?? 0);
             $downPay    = (int) ($invoice->downpayment ?? 0);
 
@@ -167,7 +172,7 @@ class InvoiceController extends Controller
             ]);
 
             DB::commit();
-            return redirect()->route('invoice..index')->with('success', 'Invoice berhasil diperbarui.');
+            return redirect()->route('customer.index')->with('success', 'Invoice berhasil diperbarui.');
         } catch (\Exception $e) {
             DB::rollBack();
             return back()->with('error', 'Gagal mengupdate invoice: ' . $e->getMessage())->withInput();
@@ -176,10 +181,6 @@ class InvoiceController extends Controller
 
     public function destroy(Request $request, Invoice $invoice)
     {
-        // Opsional: batasi penghapusan saat status tertentu
-        if (in_array($invoice->status, ['paid'])) {
-            return back()->with('error', 'Invoice yang sudah "paid" tidak boleh dihapus.');
-        }
 
         $force = (bool) $request->query('force', false);
 
@@ -213,10 +214,19 @@ class InvoiceController extends Controller
         $customer = Customer::with(['products.product','products.category'])
             ->findOrFail($invoice->customer_id);
 
+        $publicPath = '/home/u141929070/domains/optigard.id/public_html';
+        app()->usePublicPath($publicPath);
+        app()->instance('path.public', $publicPath);
+        config([
+            'dompdf.public_path'     => $publicPath,
+            'dompdf.chroot'          => $publicPath,
+            'dompdf.isRemoteEnabled' => true,
+        ]);
+
         $pdf = Pdf::setPaper('A4','portrait')
             ->setOptions([
                 'isRemoteEnabled' => true,
-                'chroot' => public_path(), // aman; boleh dihapus jika tidak perlu
+                // 'chroot' => public_path(), // aman; boleh dihapus jika tidak perlu
             ])
             ->loadView('invoice.pdf', [
                 'invoice'  => $invoice,
